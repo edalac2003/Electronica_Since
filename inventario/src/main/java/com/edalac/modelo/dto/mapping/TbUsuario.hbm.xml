@@ -3,15 +3,15 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 19/04/2017 11:44:34 PM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="TbUsuario" table="tb_usuario">
+    <class name="com.edalac.modelo.dto.TbUsuario" table="tb_usuario">
         <id name="nbIdusuario" type="long">
             <column name="nb_idusuario" precision="11" scale="0" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="tbRol" class="TbRol" fetch="select">
+        <many-to-one name="tbRol" class="com.edalac.modelo.dto.TbRol" fetch="select">
             <column name="nb_rol" precision="11" scale="0" />
         </many-to-one>
-        <many-to-one name="tbEmpresa" class="TbEmpresa" fetch="select">
+        <many-to-one name="tbEmpresa" class="com.edalac.modelo.dto.TbEmpresa" fetch="select">
             <column name="nb_empresa" precision="11" scale="0" />
         </many-to-one>
         <property name="vrUsuario" type="string">

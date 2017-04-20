@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 19/04/2017 11:44:34 PM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="TbEmpresa" table="tb_empresa">
+    <class name="com.edalac.modelo.dto.TbEmpresa" table="tb_empresa">
         <id name="nbIdempresa" type="long">
             <column name="nb_idempresa" precision="11" scale="0" />
             <generator class="assigned" />
@@ -14,23 +14,5 @@
         <property name="vrCodigoEmpresa" type="string">
             <column name="vr_codigo_empresa" length="32" />
         </property>
-        <set name="tbFacturas" table="tb_factura" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="nb_empresa" precision="11" scale="0" />
-            </key>
-            <one-to-many class="TbFactura" />
-        </set>
-        <set name="tbUsuarios" table="tb_usuario" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="nb_empresa" precision="11" scale="0" />
-            </key>
-            <one-to-many class="TbUsuario" />
-        </set>
-        <set name="tbArticulos" table="tb_articulo" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="nb_empresa" precision="11" scale="0" />
-            </key>
-            <one-to-many class="TbArticulo" />
-        </set>
     </class>
 </hibernate-mapping>

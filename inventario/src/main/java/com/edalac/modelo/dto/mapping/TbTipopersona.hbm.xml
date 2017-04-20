@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 19/04/2017 11:44:34 PM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="TbTipopersona" table="tb_tipopersona">
+    <class name="com.edalac.modelo.dto.TbTipopersona" table="tb_tipopersona">
         <id name="nbIdtipopersona" type="long">
             <column name="nb_idtipopersona" precision="11" scale="0" />
             <generator class="assigned" />
@@ -11,11 +11,5 @@
         <property name="vrDescripcion" type="string">
             <column name="vr_descripcion" length="20" not-null="true" />
         </property>
-        <set name="tbTerceros" table="tb_tercero" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="nb_tipopersona" precision="11" scale="0" not-null="true" />
-            </key>
-            <one-to-many class="TbTercero" />
-        </set>
     </class>
 </hibernate-mapping>

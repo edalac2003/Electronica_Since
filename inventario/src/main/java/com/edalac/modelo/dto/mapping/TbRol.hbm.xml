@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 19/04/2017 11:44:34 PM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="TbRol" table="tb_rol">
+    <class name="com.edalac.modelo.dto.TbRol" table="tb_rol">
         <id name="nbIdRol" type="long">
             <column name="nb_idRol" precision="11" scale="0" />
             <generator class="assigned" />
@@ -14,11 +14,5 @@
         <property name="vrAlias" type="string">
             <column name="vr_alias" length="15" />
         </property>
-        <set name="tbUsuarios" table="tb_usuario" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="nb_rol" precision="11" scale="0" />
-            </key>
-            <one-to-many class="TbUsuario" />
-        </set>
     </class>
 </hibernate-mapping>

@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 19/04/2017 11:44:34 PM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="TbPais" table="tb_pais">
+    <class name="com.edalac.modelo.dto.TbPais" table="tb_pais">
         <id name="nbIdpais" type="long">
             <column name="nb_idpais" precision="11" scale="0" />
             <generator class="assigned" />
@@ -11,11 +11,5 @@
         <property name="vrNombre" type="string">
             <column name="vr_nombre" length="128" not-null="true" />
         </property>
-        <set name="tbDepartamentos" table="tb_departamento" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="nb_pais" precision="11" scale="0" not-null="true" />
-            </key>
-            <one-to-many class="TbDepartamento" />
-        </set>
     </class>
 </hibernate-mapping>

@@ -3,22 +3,16 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 19/04/2017 11:44:34 PM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="TbDepartamento" table="tb_departamento">
+    <class name="com.edalac.modelo.dto.TbDepartamento" table="tb_departamento">
         <id name="nbIddepartamento" type="long">
             <column name="nb_iddepartamento" precision="11" scale="0" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="tbPais" class="TbPais" fetch="select">
+        <many-to-one name="tbPais" class="com.edalac.modelo.dto.TbPais" fetch="select">
             <column name="nb_pais" precision="11" scale="0" not-null="true" />
         </many-to-one>
         <property name="vrNombre" type="string">
             <column name="vr_nombre" length="128" not-null="true" />
         </property>
-        <set name="tbCiudads" table="tb_ciudad" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="nb_departamento" precision="11" scale="0" not-null="true" />
-            </key>
-            <one-to-many class="TbCiudad" />
-        </set>
     </class>
 </hibernate-mapping>

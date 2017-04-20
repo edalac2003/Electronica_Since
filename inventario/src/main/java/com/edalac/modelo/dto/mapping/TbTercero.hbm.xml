@@ -3,21 +3,21 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 19/04/2017 11:44:34 PM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="TbTercero" table="tb_tercero">
+    <class name="com.edalac.modelo.dto.TbTercero" table="tb_tercero">
         <id name="nbIdpersona" type="long">
             <column name="nb_idpersona" precision="15" scale="0" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="tbCiudad" class="TbCiudad" fetch="select">
+        <many-to-one name="com.edalac.modelo.dto.tbCiudad" class="TbCiudad" fetch="select">
             <column name="nb_ciudad" precision="11" scale="0" not-null="true" />
         </many-to-one>
-        <many-to-one name="tbTipopersona" class="TbTipopersona" fetch="select">
+        <many-to-one name="com.edalac.modelo.dto.tbTipopersona" class="TbTipopersona" fetch="select">
             <column name="nb_tipopersona" precision="11" scale="0" not-null="true" />
         </many-to-one>
-        <many-to-one name="tbTipodocumento" class="TbTipodocumento" fetch="select">
+        <many-to-one name="com.edalac.modelo.dto.tbTipodocumento" class="TbTipodocumento" fetch="select">
             <column name="nb_tipodocumento" precision="11" scale="0" not-null="true" />
         </many-to-one>
-        <many-to-one name="tbEstado" class="TbEstado" fetch="select">
+        <many-to-one name="com.edalac.modelo.dto.tbEstado" class="TbEstado" fetch="select">
             <column name="nb_estado" precision="11" scale="0" not-null="true" />
         </many-to-one>
         <property name="vrApellidos" type="string">
@@ -44,11 +44,5 @@
         <property name="vrTelefono" type="string">
             <column name="vr_telefono" length="32" />
         </property>
-        <set name="tbFacturas" table="tb_factura" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="nb_tercero" precision="15" scale="0" />
-            </key>
-            <one-to-many class="TbFactura" />
-        </set>
     </class>
 </hibernate-mapping>

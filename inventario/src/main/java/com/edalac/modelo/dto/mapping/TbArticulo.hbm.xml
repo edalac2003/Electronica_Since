@@ -3,12 +3,12 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 19/04/2017 11:44:34 PM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="TbArticulo" table="tb_articulo">
+    <class name="com.edalac.modelo.dto.TbArticulo" table="tb_articulo">
         <id name="nbIdarticulo" type="long">
             <column name="nb_idarticulo" precision="15" scale="0" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="tbEmpresa" class="TbEmpresa" fetch="select">
+        <many-to-one name="tbEmpresa" class="com.edalac.modelo.dto.TbEmpresa" fetch="select">
             <column name="nb_empresa" precision="11" scale="0" />
         </many-to-one>
         <property name="vrCodigoArticulo" type="string">
@@ -29,11 +29,5 @@
         <property name="nbEstado" type="java.lang.Boolean">
             <column name="nb_estado" />
         </property>
-        <set name="tbDetalleFacturas" table="tb_detalle_factura" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="nb_articulo" precision="15" scale="0" />
-            </key>
-            <one-to-many class="TbDetalleFactura" />
-        </set>
     </class>
 </hibernate-mapping>
