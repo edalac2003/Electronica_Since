@@ -1,6 +1,6 @@
 package com.edalac.modelo.dto;
 // default package
-// Generated 14/11/2016 09:15:43 AM by Hibernate Tools 3.5.0.Final
+// Generated 19/04/2017 11:44:33 PM by Hibernate Tools 3.5.0.Final
 
 import java.math.BigDecimal;
 
@@ -9,7 +9,6 @@ import java.math.BigDecimal;
  */
 public class TbDetalleFactura implements java.io.Serializable {
 
-	private static final long serialVersionUID = 1L;
 	private long nbIdDetalle;
 	private TbFactura tbFactura;
 	private TbArticulo tbArticulo;
