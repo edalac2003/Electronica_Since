@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 14/11/2016 09:15:44 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.edalac.modelo.dto.TbEmpresa" table="tb_empresa">
+        <id name="nbIdempresa" type="long">
+            <column name="nb_idempresa" precision="11" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="vrNombreEmpresa" type="string">
+            <column name="vr_nombre_empresa" length="128" />
+        </property>
+        <property name="vrCodigoEmpresa" type="string">
+            <column name="vr_codigo_empresa" length="32" />
+        </property>
+    </class>
+</hibernate-mapping>

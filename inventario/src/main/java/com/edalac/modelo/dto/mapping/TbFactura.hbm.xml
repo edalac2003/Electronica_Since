@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 14/11/2016 09:15:44 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.edalac.modelo.dto.TbFactura" table="tb_factura">
+        <id name="nbIdFactura" type="long">
+            <column name="nb_id_factura" precision="15" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="tbTercero" class="com.edalac.modelo.dto.TbTercero" fetch="select">
+            <column name="nb_tercero" precision="15" scale="0" />
+        </many-to-one>
+        <many-to-one name="tbEmpresa" class="com.edalac.modelo.dto.TbEmpresa" fetch="select">
+            <column name="nb_empresa" precision="11" scale="0" />
+        </many-to-one>
+        <property name="vrNumeroFactura" type="string">
+            <column name="vr_numero_factura" length="16" />
+        </property>
+        <property name="dtFechaFactura" type="string">
+            <column name="dt_fecha_factura" length="45" />
+        </property>
+        <property name="vrDescripcion" type="string">
+            <column name="vr_descripcion" length="45" />
+        </property>
+        <property name="nbValorTotal" type="big_decimal">
+            <column name="nb_valor_total" precision="15" />
+        </property>
+        <property name="nbVendedor" type="java.lang.Long">
+            <column name="nb_vendedor" precision="15" scale="0" />
+        </property>
+        <property name="vrTipoFactura" type="string">
+            <column name="vr_tipo_factura" length="5" />
+        </property>
+        <property name="vrEstadoFactura" type="java.lang.Character">
+            <column name="vr_estado_factura" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

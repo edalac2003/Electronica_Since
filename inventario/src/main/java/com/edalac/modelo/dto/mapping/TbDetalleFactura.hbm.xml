@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 14/11/2016 09:15:44 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.edalac.modelo.dto.TbDetalleFactura" table="tb_detalle_factura">
+        <id name="nbIdDetalle" type="long">
+            <column name="nb_id_detalle" precision="15" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="tbFactura" class="com.edalac.modelo.dto.TbFactura" fetch="select">
+            <column name="nb_factura" precision="15" scale="0" />
+        </many-to-one>
+        <many-to-one name="tbArticulo" class="com.edalac.modelo.dto.TbArticulo" fetch="select">
+            <column name="nb_articulo" precision="15" scale="0" />
+        </many-to-one>
+        <property name="nbCantidad" type="java.lang.Integer">
+            <column name="nb_cantidad" />
+        </property>
+        <property name="nbValorUnitario" type="big_decimal">
+            <column name="nb_valor_unitario" precision="15" />
+        </property>
+        <property name="nbValorIva" type="big_decimal">
+            <column name="nb_valor_iva" precision="15" />
+        </property>
+        <property name="nbValorDescuento" type="big_decimal">
+            <column name="nb_valor_descuento" precision="15" />
+        </property>
+    </class>
+</hibernate-mapping>
